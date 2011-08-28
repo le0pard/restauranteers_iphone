@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RestauranteersAppDelegate : NSObject <UIApplicationDelegate>
+@interface RestauranteersAppDelegate : NSObject <UIApplicationDelegate>{
+    IBOutlet UINavigationController *navController;
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) UINavigationController *navController;
+
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

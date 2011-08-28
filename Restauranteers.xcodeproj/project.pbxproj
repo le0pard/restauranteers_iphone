@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31F7824140AE83900464E8B /* logo_wporg.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F7823140AE83900464E8B /* logo_wporg.png */; };
+		B31F782B140AE90B00464E8B /* UITableViewTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B31F782A140AE90B00464E8B /* UITableViewTextFieldCell.m */; };
+		B31F782E140AED0500464E8B /* welcome_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B31F782D140AED0500464E8B /* welcome_bg@2x.png */; };
+		B31F7832140AEFF200464E8B /* UITableViewActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B31F7830140AEFF200464E8B /* UITableViewActivityCell.m */; };
+		B31F7833140AEFF200464E8B /* UITableViewActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31F7831140AEFF200464E8B /* UITableViewActivityCell.xib */; };
 		B32B451C140AA41B00A867B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B451B140AA41B00A867B8 /* UIKit.framework */; };
 		B32B451E140AA41B00A867B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B451D140AA41B00A867B8 /* Foundation.framework */; };
 		B32B4520140AA41B00A867B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B451F140AA41B00A867B8 /* CoreGraphics.framework */; };
@@ -24,6 +29,10 @@
 		B32B4548140AA41B00A867B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B32B4546140AA41B00A867B8 /* InfoPlist.strings */; };
 		B32B454A140AA41B00A867B8 /* RestauranteersTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B32B4549140AA41B00A867B8 /* RestauranteersTests.h */; };
 		B32B454C140AA41B00A867B8 /* RestauranteersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B32B454B140AA41B00A867B8 /* RestauranteersTests.m */; };
+		B32B455A140AA49600A867B8 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32B4558140AA49600A867B8 /* SigninViewController.m */; };
+		B32B455B140AA49600A867B8 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32B4559140AA49600A867B8 /* SigninViewController.xib */; };
+		B32B459C140ADBAB00A867B8 /* main_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32B4599140ADBAB00A867B8 /* main_logo.jpg */; };
+		B32B459D140ADBAB00A867B8 /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B459A140ADBAB00A867B8 /* welcome_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,25 +46,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B31F7823140AE83900464E8B /* logo_wporg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_wporg.png; sourceTree = "<group>"; };
+		B31F7829140AE90B00464E8B /* UITableViewTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewTextFieldCell.h; sourceTree = "<group>"; };
+		B31F782A140AE90B00464E8B /* UITableViewTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewTextFieldCell.m; sourceTree = "<group>"; };
+		B31F782D140AED0500464E8B /* welcome_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome_bg@2x.png"; sourceTree = "<group>"; };
+		B31F782F140AEFF200464E8B /* UITableViewActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewActivityCell.h; sourceTree = "<group>"; };
+		B31F7830140AEFF200464E8B /* UITableViewActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewActivityCell.m; sourceTree = "<group>"; };
+		B31F7831140AEFF200464E8B /* UITableViewActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewActivityCell.xib; sourceTree = "<group>"; };
 		B32B4517140AA41B00A867B8 /* Restauranteers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restauranteers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32B451B140AA41B00A867B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B32B451D140AA41B00A867B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32B451F140AA41B00A867B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B32B4521140AA41B00A867B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B32B4525140AA41B00A867B8 /* Restauranteers-Info.plist */ = {isa = PBXFileReference; path = "Restauranteers-Info.plist"; sourceTree = "<group>"; };
+		B32B4525140AA41B00A867B8 /* Restauranteers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Restauranteers-Info.plist"; sourceTree = "<group>"; };
 		B32B4527140AA41B00A867B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B32B4529140AA41B00A867B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B32B452B140AA41B00A867B8 /* Restauranteers-Prefix.pch */ = {isa = PBXFileReference; path = "Restauranteers-Prefix.pch"; sourceTree = "<group>"; };
-		B32B452C140AA41B00A867B8 /* RestauranteersAppDelegate.h */ = {isa = PBXFileReference; path = RestauranteersAppDelegate.h; sourceTree = "<group>"; };
+		B32B452B140AA41B00A867B8 /* Restauranteers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Restauranteers-Prefix.pch"; sourceTree = "<group>"; };
+		B32B452C140AA41B00A867B8 /* RestauranteersAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestauranteersAppDelegate.h; sourceTree = "<group>"; };
 		B32B452D140AA41B00A867B8 /* RestauranteersAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestauranteersAppDelegate.m; sourceTree = "<group>"; };
 		B32B4530140AA41B00A867B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		B32B4533140AA41B00A867B8 /* Restauranteers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restauranteers.xcdatamodel; sourceTree = "<group>"; };
 		B32B453A140AA41B00A867B8 /* RestauranteersTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestauranteersTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32B453B140AA41B00A867B8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B32B4545140AA41B00A867B8 /* RestauranteersTests-Info.plist */ = {isa = PBXFileReference; path = "RestauranteersTests-Info.plist"; sourceTree = "<group>"; };
+		B32B4545140AA41B00A867B8 /* RestauranteersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RestauranteersTests-Info.plist"; sourceTree = "<group>"; };
 		B32B4547140AA41B00A867B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B32B4549140AA41B00A867B8 /* RestauranteersTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestauranteersTests.h; sourceTree = "<group>"; };
 		B32B454B140AA41B00A867B8 /* RestauranteersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestauranteersTests.m; sourceTree = "<group>"; };
+		B32B4557140AA49600A867B8 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		B32B4558140AA49600A867B8 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		B32B4559140AA49600A867B8 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
+		B32B4599140ADBAB00A867B8 /* main_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_logo.jpg; sourceTree = "<group>"; };
+		B32B459A140ADBAB00A867B8 /* welcome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +106,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31F782C140AE91900464E8B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B31F7829140AE90B00464E8B /* UITableViewTextFieldCell.h */,
+				B31F782A140AE90B00464E8B /* UITableViewTextFieldCell.m */,
+				B31F782F140AEFF200464E8B /* UITableViewActivityCell.h */,
+				B31F7830140AEFF200464E8B /* UITableViewActivityCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B31F7834140AEFFA00464E8B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B31F7831140AEFF200464E8B /* UITableViewActivityCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		B32B450C140AA41B00A867B8 = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +159,9 @@
 		B32B4523140AA41B00A867B8 /* Restauranteers */ = {
 			isa = PBXGroup;
 			children = (
-				B32B452C140AA41B00A867B8 /* RestauranteersAppDelegate.h */,
-				B32B452D140AA41B00A867B8 /* RestauranteersAppDelegate.m */,
-				B32B452F140AA41B00A867B8 /* MainWindow.xib */,
-				B32B4532140AA41B00A867B8 /* Restauranteers.xcdatamodeld */,
+				B32B4555140AA46200A867B8 /* Classes */,
+				B32B4556140AA46D00A867B8 /* Views */,
+				B32B456C140AABB300A867B8 /* Resources */,
 				B32B4524140AA41B00A867B8 /* Supporting Files */,
 			);
 			path = Restauranteers;
@@ -156,6 +195,48 @@
 				B32B4546140AA41B00A867B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B32B4555140AA46200A867B8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B31F782C140AE91900464E8B /* Cells */,
+				B32B4557140AA49600A867B8 /* SigninViewController.h */,
+				B32B4558140AA49600A867B8 /* SigninViewController.m */,
+				B32B452C140AA41B00A867B8 /* RestauranteersAppDelegate.h */,
+				B32B452D140AA41B00A867B8 /* RestauranteersAppDelegate.m */,
+				B32B4532140AA41B00A867B8 /* Restauranteers.xcdatamodeld */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		B32B4556140AA46D00A867B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B31F7834140AEFFA00464E8B /* Cells */,
+				B32B4559140AA49600A867B8 /* SigninViewController.xib */,
+				B32B452F140AA41B00A867B8 /* MainWindow.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B32B456C140AABB300A867B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B32B4597140ADBAB00A867B8 /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B32B4597140ADBAB00A867B8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B31F782D140AED0500464E8B /* welcome_bg@2x.png */,
+				B31F7823140AE83900464E8B /* logo_wporg.png */,
+				B32B4599140ADBAB00A867B8 /* main_logo.jpg */,
+				B32B459A140ADBAB00A867B8 /* welcome_bg.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +308,12 @@
 			files = (
 				B32B4528140AA41B00A867B8 /* InfoPlist.strings in Resources */,
 				B32B4531140AA41B00A867B8 /* MainWindow.xib in Resources */,
+				B32B455B140AA49600A867B8 /* SigninViewController.xib in Resources */,
+				B32B459C140ADBAB00A867B8 /* main_logo.jpg in Resources */,
+				B32B459D140ADBAB00A867B8 /* welcome_bg.png in Resources */,
+				B31F7824140AE83900464E8B /* logo_wporg.png in Resources */,
+				B31F782E140AED0500464E8B /* welcome_bg@2x.png in Resources */,
+				B31F7833140AEFF200464E8B /* UITableViewActivityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +352,9 @@
 				B32B452A140AA41B00A867B8 /* main.m in Sources */,
 				B32B452E140AA41B00A867B8 /* RestauranteersAppDelegate.m in Sources */,
 				B32B4534140AA41B00A867B8 /* Restauranteers.xcdatamodeld in Sources */,
+				B32B455A140AA49600A867B8 /* SigninViewController.m in Sources */,
+				B31F782B140AE90B00464E8B /* UITableViewTextFieldCell.m in Sources */,
+				B31F7832140AEFF200464E8B /* UITableViewActivityCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Restauranteers/Restauranteers-Prefix.pch";
 				INFOPLIST_FILE = "Restauranteers/Restauranteers-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,6 +465,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Restauranteers/Restauranteers-Prefix.pch";
 				INFOPLIST_FILE = "Restauranteers/Restauranteers-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -432,6 +524,7 @@
 				B32B4551140AA41C00A867B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B32B4552140AA41C00A867B8 /* Build configuration list for PBXNativeTarget "RestauranteersTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +533,7 @@
 				B32B4554140AA41C00A867B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

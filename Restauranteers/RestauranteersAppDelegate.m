@@ -7,6 +7,7 @@
 //
 
 #import "RestauranteersAppDelegate.h"
+#import "SigninViewController.h"
 
 @implementation RestauranteersAppDelegate
 
@@ -14,10 +15,17 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    navController = [[UINavigationController alloc] init];
+    
+    SigninViewController *signinViewController = [[SigninViewController alloc] init];
+    [navController pushViewController:signinViewController animated:NO];
+    [signinViewController release];
+    
+    [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,7 +68,9 @@
 
 - (void)dealloc
 {
+    [navController release];
     [_window release];
+    
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
