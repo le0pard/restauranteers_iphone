@@ -89,7 +89,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return @"";
+    if (0 == section){
+        return @"";
+    } else {
+        return @"";
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
