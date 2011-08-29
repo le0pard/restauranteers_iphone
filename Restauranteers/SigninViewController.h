@@ -11,7 +11,6 @@
 @interface SigninViewController : UIViewController <UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
     IBOutlet UITableView *tableView;
 	UITextField *emailTextField, *passwordTextField;
-    UIBarButtonItem *signinButton;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

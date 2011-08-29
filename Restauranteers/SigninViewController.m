@@ -47,8 +47,6 @@
     [logoView release];
     
     self.navigationItem.title = NSLocalizedString(@"Sign In", @"");
-    signinButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save:)];
-    self.navigationItem.rightBarButtonItem = signinButton;
     
     self.tableView.backgroundColor = [UIColor clearColor];
 }
@@ -79,11 +77,15 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tv {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if (0 == section){
+        return 2;
+    } else {
+        return 1;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
@@ -91,8 +93,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        if (indexPath.row == 0) {
+    if (0 == [indexPath section]) {
+        if (0 == indexPath.row) {
             UITableViewTextFieldCell *emailCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmailCell"] autorelease];
             emailCell.textLabel.text = NSLocalizedString(@"Email", @"");
             emailTextField = [emailCell.textField retain];
@@ -104,7 +106,7 @@
             emailTextField.delegate = self;
             
             return emailCell;
-        } else if(indexPath.row == 1) {
+        } else if(1 == indexPath.row) {
             UITableViewTextFieldCell *passwordCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PasswordCell"] autorelease];
             passwordCell.textLabel.text = NSLocalizedString(@"Password", @"");
             passwordTextField = [passwordCell.textField retain];
@@ -117,6 +119,19 @@
             
             return passwordCell;
         }
+    } else if (1 == [indexPath section]){
+        UITableViewActivityCell *siginCell = nil;
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"UITableViewActivityCell" owner:nil options:nil];
+		for(id currentObject in topLevelObjects)
+		{
+			if([currentObject isKindOfClass:[UITableViewActivityCell class]])
+			{
+				siginCell = (UITableViewActivityCell *)currentObject;
+				break;
+			}
+		}
+		siginCell.textLabel.text = @"Sign In";
+		return siginCell;
     }
     return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoCell"] autorelease];
     
@@ -124,37 +139,93 @@
 
 #pragma mark -
 #pragma mark Table view delegate
-/*
+
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tv cellForRowAtIndexPath:indexPath];
-	if (indexPath.section == 0) {
-        for(UIView *subview in cell.subviews) {
-            if(subview.class == [UITextField class]) {
-                [subview becomeFirstResponder];
-                break;
-            }
+	[tv deselectRowAtIndexPath:indexPath animated:YES];
+    
+	switch (indexPath.section) {
+		case 0:
+        {
+			UITableViewCell *cell = (UITableViewCell *)[tv cellForRowAtIndexPath:indexPath];
+			for(UIView *subview in cell.subviews) {
+				if([subview isKindOfClass:[UITextField class]] == YES) {
+					UITextField *tempTextField = (UITextField *)subview;
+					[tempTextField becomeFirstResponder];
+					break;
+				}
+			}
+			break;
         }
-	} else if (indexPath.section == 2) {
-        WPWebViewController *webViewController;
-        if (DeviceIsPad()) {
-            webViewController = [[WPWebViewController alloc] initWithNibName:@"WPWebViewController-iPad" bundle:nil];
-        }
-        else {
-            webViewController = [[WPWebViewController alloc] initWithNibName:@"WPWebViewController" bundle:nil];
-        }
-        NSString *dashboardUrl = [blog.xmlrpc stringByReplacingOccurrencesOfString:@"xmlrpc.php" withString:@"wp-admin/"];
-        [webViewController setUrl:[NSURL URLWithString:dashboardUrl]];
-        [webViewController setUsername:self.username];
-        [webViewController setPassword:self.password];
-        if (DeviceIsPad())
-            [self presentModalViewController:webViewController animated:YES];
-        else
-            [self.navigationController pushViewController:webViewController animated:YES];
-        
-    }
-    [tv deselectRowAtIndexPath:indexPath animated:YES];
+		case 1:
+			for(int i = 0; i < 2; i++) {
+				UITableViewCell *cell = (UITableViewCell *)[tv cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+				for(UIView *subview in cell.subviews) {
+					if([subview isKindOfClass:[UITextField class]] == YES) {
+						UITextField *tempTextField = (UITextField *)subview;
+						[self textFieldDidEndEditing:tempTextField];
+					}
+				}
+			}
+            /*
+			if(username == nil) {
+				self.footerText = NSLocalizedString(@"Username is required.", @"");
+				self.buttonText = NSLocalizedString(@"Sign In", @"");
+				[tv reloadData];
+			}
+			else if(password == nil) {
+				self.footerText = NSLocalizedString(@"Password is required.", @"");
+				self.buttonText = NSLocalizedString(@"Sign In", @"");
+				[tv reloadData];
+			}
+			else {
+				self.footerText = @" ";
+				self.buttonText = NSLocalizedString(@"Signing in...", @"");
+				
+				[NSThread sleepForTimeInterval:0.15];
+				[tv reloadData];
+				if (!isSigningIn){
+					[self.navigationItem setHidesBackButton:YES animated:NO];
+					isSigningIn = YES;
+					[self performSelectorInBackground:@selector(signIn:) withObject:self];
+				}
+			}
+             */
+			break;
+		default:
+			break;
+	}
 }
-*/
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    UITableViewCell *cell = (UITableViewCell *)[textField superview];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	/*
+	switch (indexPath.row) {
+		case 0:
+			if((textField.text != nil) && ([textField.text isEqualToString:@""])) {
+				self.footerText = NSLocalizedString(@"Username is required.", @"");
+			}
+			else {
+				self.username = [[textField.text stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
+				textField.text = self.username;
+			}
+			break;
+		case 1:
+			if((textField.text != nil) && ([textField.text isEqualToString:@""])) {
+				self.footerText = NSLocalizedString(@"Password is required.", @"");
+			}
+			else {
+				self.password = textField.text;
+			}
+			break;
+		default:
+			break;
+	}
+	*/
+    //	[self.tableView reloadData];
+	[textField resignFirstResponder];
+}
+
 
 #pragma mark -
 #pragma mark UITextField methods
