@@ -7,14 +7,13 @@
 //
 
 #import "SigninViewController.h"
-#import "UITableViewTextFieldCell.h"
-#import "UITableViewActivityCell.h"
 
 @implementation SigninViewController
 
 @synthesize emailTextField, passwordTextField;
 @synthesize tableView;
-
+@synthesize emailCell, passwordCell;
+@synthesize footerText, buttonText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.footerText = @" ";
+	self.buttonText = NSLocalizedString(@"Sign In", @"");
     
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_wporg.png"]];
     logoView.frame = CGRectMake(0, 0, 320, 60);
@@ -66,6 +68,8 @@
 
 
 - (void)dealloc {
+    self.footerText = nil;
+    self.buttonText = nil;
     [emailTextField release];
     [passwordTextField release];
     [tableView release];
@@ -90,7 +94,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     if (0 == section){
-        return @"";
+        return self.footerText;
     } else {
         return @"";
     }
@@ -99,29 +103,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (0 == [indexPath section]) {
         if (0 == indexPath.row) {
-            UITableViewTextFieldCell *emailCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmailCell"] autorelease];
-            emailCell.textLabel.text = NSLocalizedString(@"Email", @"");
-            emailTextField = [emailCell.textField retain];
-            emailTextField.placeholder = NSLocalizedString(@"Email", @"");
-            emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
-            emailTextField.returnKeyType = UIReturnKeyNext;
-            emailTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-            emailTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            emailTextField.delegate = self;
-            
-            return emailCell;
+            self.emailCell = (UITableViewTextFieldCell *)[tableView dequeueReusableCellWithIdentifier:@"EmailCell"];
+            if (nil == self.emailCell) {
+                self.emailCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmailCell"] autorelease];
+                self.emailCell.textLabel.text = NSLocalizedString(@"Email", @"");
+                emailTextField = [self.emailCell.textField retain];
+                emailTextField.placeholder = NSLocalizedString(@"Email", @"");
+                emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+                emailTextField.returnKeyType = UIReturnKeyNext;
+                emailTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+                emailTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+                emailTextField.delegate = self;
+            }
+            return self.emailCell;
         } else if(1 == indexPath.row) {
-            UITableViewTextFieldCell *passwordCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PasswordCell"] autorelease];
-            passwordCell.textLabel.text = NSLocalizedString(@"Password", @"");
-            passwordTextField = [passwordCell.textField retain];
-            passwordTextField.placeholder = NSLocalizedString(@"Password", @"");
-            passwordTextField.secureTextEntry = YES;
-            passwordTextField.keyboardType = UIKeyboardTypeDefault;
-            passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-            passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            passwordTextField.delegate = self;
-            
-            return passwordCell;
+            self.passwordCell = (UITableViewTextFieldCell *)[tableView dequeueReusableCellWithIdentifier:@"PasswordCell"];
+            if (nil == self.passwordCell) {
+                self.passwordCell = [[[UITableViewTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PasswordCell"] autorelease];
+                self.passwordCell.textLabel.text = NSLocalizedString(@"Password", @"");
+                passwordTextField = [self.passwordCell.textField retain];
+                passwordTextField.placeholder = NSLocalizedString(@"Password", @"");
+                passwordTextField.secureTextEntry = YES;
+                passwordTextField.keyboardType = UIKeyboardTypeDefault;
+                passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+                passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+                passwordTextField.delegate = self;
+            }
+            return self.passwordCell;
         }
     } else if (1 == [indexPath section]){
         UITableViewActivityCell *siginCell = nil;
@@ -134,7 +142,7 @@
 				break;
 			}
 		}
-		siginCell.textLabel.text = @"Sign In";
+		siginCell.textLabel.text = self.buttonText;
 		return siginCell;
     }
     return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"NoCell"] autorelease];
@@ -170,30 +178,20 @@
 					}
 				}
 			}
-            /*
-			if(username == nil) {
-				self.footerText = NSLocalizedString(@"Username is required.", @"");
+			if(emailTextField.text == nil || emailTextField.text.length < 1) {
+				self.footerText = NSLocalizedString(@"Email is required.", @"");
 				self.buttonText = NSLocalizedString(@"Sign In", @"");
 				[tv reloadData];
 			}
-			else if(password == nil) {
+			else if(passwordTextField.text == nil || passwordTextField.text.length < 1) {
 				self.footerText = NSLocalizedString(@"Password is required.", @"");
 				self.buttonText = NSLocalizedString(@"Sign In", @"");
 				[tv reloadData];
-			}
-			else {
-				self.footerText = @" ";
-				self.buttonText = NSLocalizedString(@"Signing in...", @"");
-				
-				[NSThread sleepForTimeInterval:0.15];
-				[tv reloadData];
-				if (!isSigningIn){
-					[self.navigationItem setHidesBackButton:YES animated:NO];
-					isSigningIn = YES;
-					[self performSelectorInBackground:@selector(signIn:) withObject:self];
-				}
-			}
-             */
+			} else {
+                self.footerText = @"";
+                self.buttonText = NSLocalizedString(@"Signing in...", @"");
+                [tv reloadData];
+            }
 			break;
 		default:
 			break;
@@ -201,9 +199,9 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    /*
     UITableViewCell *cell = (UITableViewCell *)[textField superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-	/*
 	switch (indexPath.row) {
 		case 0:
 			if((textField.text != nil) && ([textField.text isEqualToString:@""])) {
