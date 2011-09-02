@@ -191,6 +191,7 @@
                 self.footerText = @"";
                 self.buttonText = NSLocalizedString(@"Signing in...", @"");
                 [tv reloadData];
+                [self dismissModalViewControllerAnimated:YES];
             }
 			break;
 		default:

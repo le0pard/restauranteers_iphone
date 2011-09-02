@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface RestauranteersAppDelegate : NSObject <UIApplicationDelegate>{
-    IBOutlet UINavigationController *navController;
+    IBOutlet UITabBarController *rootController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) UINavigationController *navController;
-
+@property (nonatomic, retain) UITabBarController *rootController;
+- (void)checkLoginScreen;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

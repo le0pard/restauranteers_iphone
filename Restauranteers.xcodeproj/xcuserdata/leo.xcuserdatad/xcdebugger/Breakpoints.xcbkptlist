@@ -23,23 +23,39 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Restauranteers/SigninViewController.h"
-         timestampString = "336314041.515507"
+         timestampString = "336669396.198314"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "9"
-         endingLineNumber = "9">
+         startingLineNumber = "11"
+         endingLineNumber = "11">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Restauranteers/SigninViewController.h"
-         timestampString = "336314706.456523"
+         filePath = "Restauranteers/RestauranteersAppDelegate.m"
+         timestampString = "336669396.198314"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "12"
-         endingLineNumber = "12">
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-checkLoginScreen"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Restauranteers/RestauranteersAppDelegate.m"
+         timestampString = "336669204.817969"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "-checkLoginScreen"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -15,19 +15,22 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize navController;
+@synthesize rootController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    navController = [[UINavigationController alloc] init];
-    
-    SigninViewController *signinViewController = [[SigninViewController alloc] init];
-    [navController pushViewController:signinViewController animated:NO];
-    [signinViewController release];
-    
-    [self.window addSubview:navController.view];
+    [self.window addSubview:rootController.view];
     [self.window makeKeyAndVisible];
+    [self checkLoginScreen];
     return YES;
+}
+
+- (void)checkLoginScreen{
+    if (true){
+        SigninViewController *signController = [[SigninViewController alloc] init];
+        [rootController presentModalViewController:signController animated:NO];
+        [signController release];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -68,7 +71,7 @@
 
 - (void)dealloc
 {
-    [navController release];
+    [rootController release];
     [_window release];
     
     [__managedObjectContext release];
