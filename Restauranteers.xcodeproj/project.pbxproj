@@ -33,6 +33,7 @@
 		B32B455B140AA49600A867B8 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32B4559140AA49600A867B8 /* SigninViewController.xib */; };
 		B32B459C140ADBAB00A867B8 /* main_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32B4599140ADBAB00A867B8 /* main_logo.jpg */; };
 		B32B459D140ADBAB00A867B8 /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B32B459A140ADBAB00A867B8 /* welcome_bg.png */; };
+		B3B4CF4A14112CDE008F636B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B4CF4914112CDE008F636B /* Default.png */; };
 		B3FEF8EC14111E48000F3297 /* book_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3FEF8EB14111E48000F3297 /* book_icon.png */; };
 		B3FEF8F414112308000F3297 /* RestaurantsVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FEF8F214112308000F3297 /* RestaurantsVIewController.m */; };
 		B3FEF8F514112308000F3297 /* RestaurantsVIewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FEF8F314112308000F3297 /* RestaurantsVIewController.xib */; };
@@ -80,6 +81,7 @@
 		B32B4559140AA49600A867B8 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
 		B32B4599140ADBAB00A867B8 /* main_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_logo.jpg; sourceTree = "<group>"; };
 		B32B459A140ADBAB00A867B8 /* welcome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome_bg.png; sourceTree = "<group>"; };
+		B3B4CF4914112CDE008F636B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		B3FEF8EB14111E48000F3297 /* book_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book_icon.png; sourceTree = "<group>"; };
 		B3FEF8F114112308000F3297 /* RestaurantsVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsVIewController.h; sourceTree = "<group>"; };
 		B3FEF8F214112308000F3297 /* RestaurantsVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsVIewController.m; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		B32B4597140ADBAB00A867B8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B3B4CF4914112CDE008F636B /* Default.png */,
 				B3FEF8EB14111E48000F3297 /* book_icon.png */,
 				B31F782D140AED0500464E8B /* welcome_bg@2x.png */,
 				B31F7823140AE83900464E8B /* logo_wporg.png */,
@@ -327,6 +330,7 @@
 				B31F7833140AEFF200464E8B /* UITableViewActivityCell.xib in Resources */,
 				B3FEF8EC14111E48000F3297 /* book_icon.png in Resources */,
 				B3FEF8F514112308000F3297 /* RestaurantsVIewController.xib in Resources */,
+				B3B4CF4A14112CDE008F636B /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
